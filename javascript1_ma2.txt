@@ -1,6 +1,7 @@
 //MODULE ASSIGNMENT 2 - LEVEL 1
 
 1. What is a function literal?
+	A function literal is just an expression that defines an unnamed function. The syntax for a function literal is much like that of the function statement, except that it is used as an expression rather than as a statement and no function name is required.
 
 2. What is the constructor?
 
