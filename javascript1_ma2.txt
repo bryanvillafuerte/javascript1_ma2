@@ -4,10 +4,10 @@
 	A function literal is just an expression that defines an unnamed function. The syntax for a function literal is much like that of the function statement, except that it is used as an expression rather than as a statement and no function name is required.
 
 2. What is the constructor?
-	A contructor is used to creaye a new object, giving it different values.
+	A contructor is used to create a new object, giving it different values.
 
 3. What does the return statement do?
-	The resturn statement returns the function to the point where you gave it "direction" to go.
+	The return statement lets you immediately break out of a function call, possibly returning a value. it is normally used whenever your function needs to synchronously convey information to its caller.
 
 4. What will be written to the console from this function:
 		function myFunction(){

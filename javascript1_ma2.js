@@ -73,3 +73,5 @@ var femaleCelebs = celebCouples.filter(function(femaleCeleb){
 console.log(femaleCelebs);
 
 //7. Create a simple function that logs the date.
+var d = new Date();
+console.log(d);
