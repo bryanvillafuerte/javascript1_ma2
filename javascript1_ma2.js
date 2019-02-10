@@ -5,11 +5,11 @@ var classA = function() {
 }
 
 var a = new classA();
-    classA.prototype.print = function() {
+    classA.prototype.printParent = function() {
     console.log(this.name);
 }
 
-a.print();
+a.printParent();
 
 var inheritsFrom = function (child, parent) {
     child.prototype = Object.create(parent.prototype);
@@ -21,18 +21,20 @@ var classB = function() {
 
 inheritsFrom(classB, classA);
 
-classB.prototype.print = function() {
-    classA.prototype.print.call(this);
+classB.prototype.printChild = function() {
+    classA.prototype.printParent.call(this);
     console.log(this.name);
 }
 
 var b = new classB();
-b.print();
+b.printChild();
+
 
 //2. Create an array of numbers from 1 - 10; slice the 5th number in the array
 var countToTen = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
 console.log(countToTen.slice(4,5));
+
 
 //3. Delete the last number in the array that you created above.
 var countToTen = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -57,21 +59,41 @@ fruitStr = fruitStr.replace(/strawberries|strawberry/gi, function sToB (matched)
 
 console.log(fruitStr);
 
+
 //5. Create an array and a button. The array should contain 4 football clubs names. When the button is clicked, remove all elements out of the array that we just created. There after add in 4 names of cars inside that array. Log it to the console.
+var myClub = ['Oslo City FC', 'Vålerenga Fotball', 'Manglerud Star Toppfotball', 'KFUM-Kameratene Oslo'];
+var myCar = ['Porsche', 'Audi', 'Mercedes Benz', 'Tesla'];
+console.log('My Club', myClub);
+
+var $button = document.createElement('Button');
+$button.innerHTML = 'Click Me';
+document.body.appendChild($button);
+
+$button.addEventListener('click', ()=> {
+    myClub = [];
+    myClub = [...myCar];
+    console.log('My Cars', myClub);
+});
+
 
 //6. Create an array of objects with 3 people inside it. Use the filter function to map by a name.
 var celebCouples = [
-    {femaleCeleb: "Rita Wilson", maleCeleb: "Tom Hanks"},
-    {femaleCeleb: "Sarah Jessica Parker", maleCeleb: "Matthew Broderick"},
-    {femaleCeleb: "Jada Pinkett Smith", maleCeleb: "Will Smith"},
+    {femaleCeleb: 'Rita Wilson', maleCeleb: 'Tom Hanks'},
+    {femaleCeleb: 'Sarah Jessica Parker', maleCeleb: 'Matthew Broderick'},
+    {femaleCeleb: 'Jada Pinkett Smith', maleCeleb: 'Will Smith'},
 ]
 
 var femaleCelebs = celebCouples.filter(function(femaleCeleb){
-    return (femaleCeleb.celebCouples === "Tom Hanks");
+    return (femaleCeleb.maleCeleb === 'Tom Hanks');
 })
 
 console.log(femaleCelebs);
 
+
 //7. Create a simple function that logs the date.
-var d = new Date();
-console.log(d);
+function showDate () {
+    var d = new Date();
+    console.log(d);
+}
+
+showDate();
