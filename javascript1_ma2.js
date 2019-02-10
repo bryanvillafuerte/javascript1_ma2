@@ -22,7 +22,6 @@ var classB = function() {
 inheritsFrom(classB, classA);
 
 classB.prototype.printChild = function() {
-    classA.prototype.printParent.call(this);
     console.log(this.name);
 }
 
